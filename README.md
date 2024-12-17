@@ -12,89 +12,7 @@
 
 "Kamu" merupakan PHP framework yang sangat simpel, memberikan pengalaman seolah-olah berada di localhost meskipun dalam mode production. Dibantu dengan "Saya" konsol yang membantu pengembangan aplikasi secara efisien.
 
-## Api Spec
-
-See in postman collection
-```url
-https://www.postman.com/dewanakl/workspace/undangan/collection/20716209-a29ef362-b4dc-4c02-8904-d90749a40842?action=share
-```
-
-## Run without docker
-
-- Create file env
-
-    ```bash
-    cp .env.example .env
-    ```
-
-- Install package
-
-    ```bash
-    composer install
-    ```
-
-- Create key application
-
-    ```bash
-    php saya key
-    ```
-
-- Execute migration database
-
-    ```bash
-    php saya migrasi --gen
-    ```
-
-- Run in development server
-
-    ```bash
-    php saya coba
-    ```
-
-## Run with docker
-
-- Create file env
-
-    ```bash
-    cp .env.example .env
-    ```
-
-- Change and customize env file
-
-    ```text
-    BASEURL=https://your.domain.or.ipaddress:8080/
-
-    DB_DRIV=pgsql
-    DB_HOST=db
-    DB_PORT=5432
-    DB_NAME=undangan
-    DB_USER=root
-    DB_PASS=12345678
-
-    JWT_KEY=valueIsSecure
-    ```
-
-- Build and run image
-
-    ```bash
-    docker compose up --build -d
-    ```
-
-- Execute migration
-
-    > **_NOTE:_** Wait until the database is ready.
-
-    ```bash
-    docker exec undangan-app php saya migrasi --gen
-    ```
-
 ## Deployment on vercel
-
-- Clone or download this repository
-
-    ```bash
-    git clone https://github.com/dewanakl/undangan-api.git
-    ```
 
 - Install package
 
@@ -160,15 +78,6 @@ https://www.postman.com/dewanakl/workspace/undangan/collection/20716209-a29ef362
     ```bash
     php saya coba
     ```
-
-## Contributing
-
-I'm very open to those of you who want to contribute to Kamu framework!
-
-## Security Vulnerabilities
-
-If you find a security vulnerability in this Kamu, please email DKL via [dewanakretarta29@gmail.com](mailto:dewanakretarta29@gmail.com).
-
 ## License
 
 Kamu framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
